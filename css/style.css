@@ -1,39 +1,26 @@
-/* Global Styles */
-body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    background: #f4fff5;
-    color: black;
-}
-
-/* Hero Section */
-/* Hero video wrapper */
+/* HERO SECTION */
 .hero {
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 0 20px;
 }
 
-/* Background video - full visible */
+/* Background video */
 .hero video {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* entire video visible */
+    object-fit: contain; /* show entire video */
     transform: translate(-50%, -50%);
     z-index: -2;
-    background: black; /* fills empty space */
+    background: black;
 }
 
-/* Overlay for readability */
+/* Overlay to make text readable */
 .overlay {
     position: absolute;
     top: 0;
@@ -44,327 +31,17 @@ body {
     z-index: -1;
 }
 
-/* Hero Content */
+/* HERO CONTENT */
 .hero-content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-}
-
-/* Reduce video height on small screens */
-@media (max-width: 768px) {
-    .hero video {
-        transform: translate(-50%, -50%) scale(0.8);
-        min-height: 60vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero video {
-        transform: translate(-50%, -50%) scale(0.75);
-        min-height: 50vh;
-    }
-}
-
-
-
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(202, 255, 204, 0.35);
-    z-index: -1;
-}
-
-/* Hero Content */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.hero-content img.logo-blend {
-    width: 150px;
-    max-width: 60vw;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.hero-content h1 {
-    font-size: 1.8rem;
-    color: #2e4d34;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-.hero-content p {
-    font-size: 1rem;
-    max-width: 90vw;
-    line-height: 1.4;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-/* CTA Buttons */
-.cta-btn {
-    text-decoration: none;
-    background: black;
-    color: #34ebc6;
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
-
-.cta-btn:hover {
-    transform: scale(1.05);
-    background: #3b6b45;
-}
-
-/* Map Button */
-.map-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: black;
-    color: #34ebc6;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 12px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.map-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
-}
-
-/* Floating Icons */
-/* Floating Icons at Top-Left */
-.float-wrapper {
-    position: fixed;
-    top: 20px;        /* distance from top */
-    left: 20px;       /* distance from left */
-    display: flex;
-    flex-direction: column; /* vertical stack */
-    gap: 5px;         /* spacing between icons */
-    z-index: 10;
-}
-
-.insta-float, .whatsapp-float {
-    width: 50px;
-    height: 50px;
-}
-
-.insta-float img, .whatsapp-float img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.insta-float:hover, .whatsapp-float:hover {
-    transform: scale(1.15);
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Optional: Reduce size for smaller screens */
-@media (max-width: 480px) {
-    .insta-float, .whatsapp-float {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* Arrow Scroll */
-.arrow-down {
-    width: 15px;
-    height: 15px;
-    border: solid #34ebc6;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
-    transform: rotate(45deg);
-    margin: 15px auto 0;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translateY(0); }
-    40% { transform: rotate(45deg) translateY(10px); }
-    60% { transform: rotate(45deg) translateY(5px); }
-}
-
-/* Product Slider */
-.product-slider {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    margin: 40px 0;
-}
-
-.slider-title {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-}
-
-/* Best Sellers Track */
-.slide-track {
-    display: flex;
-    gap: 15px;
-    padding: 0 10px;
-}
-
-.slide {
-    flex: 0 0 200px;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.product-name {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    font-size: 12px;
-}
-
-/* Special Occasions Track */
-.slide-track-service {
-    display: flex;
-    justify-content: space-between;
     gap: 10px;
-    margin: 0 10px;
 }
 
-.slide-service {
-    flex: 0 0 32%;
-    position: relative;
-    height: 200px;
-}
-
-.slide-service img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-name2 {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    font-size: 12px;
-}
-
-/* About Section */
-.about {
-    text-align: center;
-    padding: 50px 20px;
-    background: #eaffea;
-    border-top: 3px solid #b4e3b6;
-}
-
-.about h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.about p {
-    font-size: 1rem;
-    max-width: 90vw;
-    margin: auto;
-    line-height: 1.5;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #c8f1d0;
-    font-size: 0.85rem;
-}
-
-/* PDF Modal */
-#menu-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(5px);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu-frame {
-    width: 90%;
-    max-width: 600px;
-    height: 80%;
-    background: #f4fff5;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #4e8c5a;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    z-index: 10;
-}
-
-.menu-close:hover {
-    background: #3b6b45;
-}
-
-.menu-frame iframe,
-.menu-frame embed {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Logo Wrapper */
+/* Logo */
 .logo-wrapper {
     width: 150px;
     height: 150px;
@@ -375,55 +52,57 @@ footer {
     align-items: center;
 }
 
-.logo-wrapper img.logo-blend {
-    width: 80%;
+.logo-wrapper img {
+    width: 90%;
     height: auto;
     border-radius: 50%;
 }
 
-/* Instagram Feed */
-.instagram-feed {
-    text-align: center;
-    margin: 30px 0;
+/* Headline & Buttons */
+.hero-content h1 {
+    font-size: 1.6rem;
+    color: #2e4d34;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.cta-btn, .map-btn {
+    text-decoration: none;
+    background: black;
+    color: #34ebc6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
-.instagram-feed h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+/* FLOATING SOCIAL ICONS */
+.float-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10;
 }
-
-.instagram-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-    margin: 0 auto;
-    overflow-y: auto;
+.float-wrapper a {
+    width: 40px;
+    height: 40px;
 }
-
-.instagram-wrapper iframe {
+.float-wrapper img {
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: contain;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-content img.logo-blend { width: 120px; }
-    .hero-content h1 { font-size: 1.5rem; }
-    .hero-content p { font-size: 0.95rem; }
-    .slide-service { flex: 0 0 48%; height: 180px; }
-    .slide { flex: 0 0 180px; height: 180px; }
-    .slide img, .slide-service img { height: 100%; }
+/* RESPONSIVE */
+@media(max-width:768px){
+    .logo-wrapper { width: 120px; height: 120px; }
+    .hero-content h1 { font-size: 1.3rem; }
+    .float-wrapper a { width: 35px; height: 35px; }
 }
 
-@media (max-width: 480px) {
-    .hero-content img.logo-blend { width: 100px; }
-    .hero-content h1 { font-size: 1.2rem; }
-    .hero-content p { font-size: 0.85rem; }
-    .slide-service { flex: 0 0 100%; height: 150px; }
-    .slide { flex: 0 0 150px; height: 150px; }
-    .insta-float, .whatsapp-float { width: 40px; height: 40px; }
-    .map-btn { font-size: 11px; padding: 5px 10px; }
-    .cta-btn { font-size: 0.85rem; padding: 8px 20px; }
+@media(max-width:480px){
+    .logo-wrapper { width: 100px; height: 100px; }
+    .hero-content h1 { font-size: 1.1rem; }
+    .float-wrapper a { width: 30px; height: 30px; }
 }
