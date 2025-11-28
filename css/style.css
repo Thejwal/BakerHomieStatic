@@ -147,10 +147,11 @@ body {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 5px;
-    transform: rotate(45deg); /* points arrow down */
+    transform: rotate(45deg) translateY(-5px); /* Moves the arrow up slightly */
     margin: 20px auto 0; /* spacing from previous element */
     animation: bounce 1.5s infinite;
 }
+
 
 /* Bounce animation */
 @keyframes bounce {
