@@ -335,6 +335,7 @@ footer {
 }
 
 /* Logo Wrapper */
+/* Logo Wrapper */
 .logo-wrapper {
     width: 250px;
     height: 250px;
@@ -353,16 +354,39 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-content img.logo-blend { width: 150px; }
-    .hero-content p { font-size: 1.1rem; }
-    .slide-service { flex: 0 0 48%; }
+    .logo-wrapper {
+        width: 200px; /* Adjust logo wrapper size on tablets */
+        height: 200px; /* Adjust logo wrapper size on tablets */
+    }
+    .hero-content img.logo-blend {
+        width: 150px; /* Adjust logo size */
+    }
+    .hero-content p {
+        font-size: 1.1rem; /* Adjust font size */
+    }
+    .slide-service {
+        flex: 0 0 48%; /* Adjust slide size */
+    }
 }
 
 @media (max-width: 480px) {
-    .hero-content img.logo-blend { width: 120px; }
-    .hero-content p { font-size: 1rem; }
-    .slide-service { flex: 0 0 100%; }
-    .insta-float, .whatsapp-float { width: 50px; height: 50px; }
+    .logo-wrapper {
+        width: 150px; /* Adjust logo wrapper size on mobile */
+        height: 150px; /* Adjust logo wrapper size on mobile */
+    }
+    .hero-content img.logo-blend {
+        width: 120px; /* Make the logo smaller on mobile */
+    }
+    .hero-content p {
+        font-size: 1rem; /* Adjust font size */
+    }
+    .slide-service {
+        flex: 0 0 100%; /* Stack services on mobile */
+    }
+    .insta-float, .whatsapp-float {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .instagram-feed {
